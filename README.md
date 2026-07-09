@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿# QuizGen 🧠
+# QuizGen 🧠
 
 **AI-Powered Quiz Platform** — Learn Smarter, In Any Language
 
