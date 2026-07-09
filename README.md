@@ -319,5 +319,3 @@ MIT
 **Made with ❤️ by the QuizGen Team**
 =======
 # AI-powered-Quiz-Managment-System
-QuizGen
->>>>>>> 5d8627f18c9c681ebf3c70076c7b3229b7c19555
