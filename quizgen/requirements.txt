@@ -1,0 +1,27 @@
+# Core Django
+Django==4.2.7
+djangorestframework==3.14.0
+channels==4.0.0
+daphne==4.0.0
+
+# Database - PostgreSQL
+psycopg2-binary==2.9.10
+dj-database-url==2.2.0
+
+# CORS & Security
+django-cors-headers==4.3.1
+
+# Environment Configuration
+python-decouple==3.8
+
+# Google OAuth Authentication
+google-auth==2.41.1
+google-auth-oauthlib==1.2.3
+
+# HTTP Requests (for Gemini API)
+requests==2.32.5
+certifi==2025.11.12
+
+# Production
+gunicorn==21.2.0
+whitenoise==6.6.0

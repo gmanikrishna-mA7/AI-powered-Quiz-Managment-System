@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light Mode: Clean "Daytime" Theme */
+    --background: 210 40% 98%; /* #F8FAFC - Slate 50 */
+    --foreground: 215 25% 17%; /* #1E293B - Dark Navy text */
+
+    --card: 0 0% 100%; /* Pure White cards */
+    --card-foreground: 215 25% 17%; /* Dark Navy text */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 17%;
+
+    /* Primary: Blue to match dark mode branding */
+    --primary: 217 91% 60%; /* #3B82F6 - Blue */
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-glow: 213 94% 68%; /* #60A5FA - Cyan */
+    --secondary-glow: 213 94% 68%;
+
+    --secondary: 213 94% 68%; /* #60A5FA - Cyan */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%; /* Slate 500 */
+
+    --accent: 263 83% 57%; /* Violet #7C3AED */
+    --accent-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%; /* #E2E8F0 - Slate 200 */
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%; /* Blue ring */
+
+    --radius: 0.75rem;
+
+    /* Gradients use blue-cyan to match dark mode */
+    --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+    --gradient-secondary: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
+    --gradient-accent: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
+    --gradient-hero: linear-gradient(135deg, #3B82F6 0%, #60A5FA 50%, #7C3AED 100%);
+    
+    --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.3);
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-card-hover: 0 8px 12px -2px rgba(0, 0, 0, 0.15);
+  }
+
+  .dark {
+    /* Deep Cosmos Theme - Background Base: #050511 */
+    --background: 240 52% 3%;
+    --foreground: 0 0% 100%;
+
+    /* Card Background: #0F1123 with glassmorphism */
+    --card: 236 40% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 236 40% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Primary: Blue gradient #3B82F6 to #60A5FA */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Cyan accent: #60A5FA */
+    --primary-glow: 213 94% 68%;
+    --secondary-glow: 213 94% 68%;
+
+    /* Secondary: Cyan #60A5FA */
+    --secondary: 213 94% 68%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 236 40% 14%;
+    /* Body text: #9CA3AF */
+    --muted-foreground: 218 11% 65%;
+
+    /* Violet accent: #7C3AED */
+    --accent: 263 83% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 145 80% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border: Violet #7C3AED */
+    --border: 263 83% 57%;
+    --input: 236 40% 14%;
+    --ring: 217 91% 60%;
+
+    /* Primary action gradient: Blue to Cyan */
+    --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+    --gradient-secondary: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
+    --gradient-accent: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
+    --gradient-hero: linear-gradient(135deg, #3B82F6 0%, #60A5FA 50%, #7C3AED 100%);
+    
+    --shadow-glow: 0 0 60px hsl(217 91% 60% / 0.35);
+    --shadow-card: 0 4px 25px hsl(240 52% 3% / 0.6);
+    --shadow-card-hover: 0 12px 40px hsl(240 52% 3% / 0.8);
+    
+    /* Card radius for 16px rounded corners */
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-shadow-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Deep Cosmos glassmorphism: #0F1123 at 80% opacity with 10px blur and violet border */
+  .dark .glass {
+    background: rgba(15, 17, 35, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid #7C3AED;
+  }
+
+  /* Cosmos card style with glassmorphism effect */
+  .cosmos-card {
+    background: rgba(15, 17, 35, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid #7C3AED;
+    border-radius: 16px;
+  }
+
+  /* Gradient button for primary actions */
+  .gradient-button {
+    background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+    color: #FFFFFF;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .gradient-button:hover {
+    background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+
+  /* Icon colors for cosmos theme */
+  .dark .cosmos-icon {
+    color: #60A5FA;
+  }
+
+  .dark .cosmos-icon-white {
+    color: #FFFFFF;
+  }
+
+  /* Typography for cosmos theme */
+  .dark .cosmos-heading {
+    color: #FFFFFF;
+  }
+
+  .dark .cosmos-body {
+    color: #9CA3AF;
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Custom Scrollbar Styles */
+  .overflow-x-auto::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.2);
+    border-radius: 4px;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.4);
+  }
+
+  /* Interactive card that responds to hover */
+  .interactive-card {
+    @apply transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .dark .interactive-card:hover {
+    box-shadow: 0 8px 30px hsl(var(--primary) / 0.15);
+  }
+
+  /* Subtle glowing border for emphasis */
+  .glow-border {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.15), 
+                inset 0 1px 0 hsl(var(--foreground) / 0.05);
+  }
+}
+
+/* ... your existing @layer code ... */
+
+/* Add this at the very bottom */
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
